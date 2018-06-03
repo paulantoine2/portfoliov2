@@ -1,1 +1,445 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+	/* Adjust font size */
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	/* Font varient */
+	font-variant-ligatures: none;
+	-webkit-font-variant-ligatures: none;
+	/* Smoothing */
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 36px;
+	letter-spacing: 0.42px;
+	text-align: center;
+	margin: 25px 0;
+}
+.button {
+	font-weight: 600;
+	border: solid 1px #fff;
+	border-radius: 10px;
+	padding: 7px 25px;
+	display: inline-block;
+	text-decoration: none;
+  transition: all .2s ease;
+}
+.shade {
+	background: #FFFFFF;
+	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+	transition: all .3s ease;
+	&:hover {
+		box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+	}
+}
+.call-to-action {
+  display: flex;
+  justify-content: center;
+}
+section {
+	padding: 50px 10px;
+	&.light {
+		h2 {
+			color: #4A90E2;
+		}
+		.main-text {
+			color: #9B9B9B;
+			text-align: center;
+		}
+	}
+	&.dark {
+		* {
+			color: #fff;
+		}
+	}
+}
+.main-text {
+  font-size: 1rem;
+	line-height: 2em;
+  &.small {
+    font-size: 0.875rem;
+  }
+}
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+header {
+	position: fixed;
+	color: #fff;
+	width: 100%;
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: all .2s ease;
+	z-index: 1000;
+  .button {
+    background-color: #5A2676;
+    color: #fff;
+    border-color: #5A2676;
+    box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+    &:hover {
+      box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+    }
+  }
+	&.page-scroll {
+		background-color: #fff;
+		box-shadow: 0 0 19px 8px rgba(0,0,0,0.13);
+		&, a:not(.button) {
+			color: #4A4A4A;
+			border-color: #4A4A4A;
+		}
+		svg > g > g {
+			fill: #4A4A4A;
+		}
+	}
+	& + * {
+		padding-top: 125px;
+	}
+	.branding {
+		display: flex;
+		padding-left: 16px;
+		align-items: center;
+		.site-title {
+			font-size: 18px;
+			text-transform: uppercase;
+			margin-left: 16px;
+			.main-site-title {
+				font-weight: 600;
+				margin-bottom: 5px;
+			}
+		}
+	}
+	nav {
+		width: 500px;
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			width: 100%;
+			li {
+				margin: 0 15px;
+				a {
+					color: #fff;
+					font-size: 14px;
+					text-decoration: none;
+					svg > g > g {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+
+}
+.typing-indicator {
+  $ti-color-bg: #E6E7ED;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 10px;
+  will-change: transform;
+  width: auto;
+  padding: 20px;
+  display: table;
+  position: absolute;
+  opacity: 0;
+  animation-name: animateTypingIndicator;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  span {
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin: 0 1px;
+    background-color: #fcfcff;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) {
+        animation: 1s blink infinite ($i * .3333s);
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes animateTypingIndicator {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// vertically center demo
+html {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+#about {
+	position: relative;
+	padding-bottom: 150px;
+  margin-bottom: 100px;
+	&:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: -1000;
+		background: linear-gradient(142deg, #5A2676 0%, #32BCF6 100%);
+		transform-origin: left bottom;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: skew(0deg,-4deg);
+	}
+	.wrapper {
+		max-width: 640px;
+		.inside {
+			background-color: rgba(255,255,255,0.07);
+			border-radius: 10px;
+			padding: 25px;
+      opacity: 0;
+      animation: fadeInScale .2s ease forwards 2.5s;
+			.objectives ul {
+				display: flex;
+				justify-content: space-around;
+				li {
+					margin: 40px 0;
+					padding: 10px;
+					text-align: center;
+					.icon {
+						margin-bottom: 10px;
+            min-height: 24px;
+					}
+					.title {
+						font-size: 1.125rem;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+		.thumbnail {
+			position: absolute;
+			left: -96px;
+			height: 82px;
+			width: 82px;
+			img {
+				mix-blend-mode: luminosity;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+  .highlighted {
+    position: absolute;
+    width: 100%;
+    top: calc(100%);
+    left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+#portfolio {
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+	.items {
+		display: flex;
+		flex-wrap: wrap;
+    justify-content: center;
+		.item {
+      text-decoration: none;
+      width: 320px;
+			margin: 36px;
+			border-radius: 10px;
+      .logo {
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        img {
+          transform: scale(0.5);
+        }
+        &:after {
+          content: '';
+          width: 80%;
+          height: 1px;
+          background-color: #C7C7C7;
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+        }
+      }
+      .description {
+        padding: 20px;
+
+      }
+		}
+	}
+}
+#experience {
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+    background: linear-gradient(142deg, #32BCF6 0%, #5A2676 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skew(0deg,-4deg);
+  }
+  .wrapper {
+    max-width: 900px;
+  }
+  .step {
+    margin-bottom: 40px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      height: 15px;
+      width: 15px;
+      background-color: #fff;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+    &:not(:last-child):after {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 27px;
+      height: 100%;
+      width: 2px;
+      background-color: #fff;
+      opacity: 0.7;
+      border-radius: 1px;
+    }
+    .description {
+      margin: 20px 0 0 20px;
+      font-size: 0.875rem;
+      line-height: 2em;
+    }
+  }
+}
+#skills {
+  .items {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      margin: 16px;
+      .logo {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+      .title {
+        font-weight: 300;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+        color: #0073BA;
+        letter-spacing: 0.28px;
+        text-align: center;
+      }
+      &#skill-nodejs .title {
+        color: #83CD29;
+      }
+      &#skill-angular .title {
+        color: #C4473A;
+      }
+    }
+  }
+}
