@@ -117,6 +117,9 @@ section {
   margin: 0 auto;
   position: relative;
 }
+section {
+  padding-top: 125px;
+}
 header {
 	position: fixed;
 	color: #fff;
@@ -146,9 +149,6 @@ header {
 		svg > g > g {
 			fill: #4A4A4A;
 		}
-	}
-	& + * {
-		padding-top: 125px;
 	}
 	.branding {
 		display: flex;
@@ -246,17 +246,7 @@ header {
   }
 }
 
-// vertically center demo
-html {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
 
-body {
-  display: table-cell;
-  vertical-align: middle;
-}
 #about {
 	position: relative;
 	padding-bottom: 150px;
