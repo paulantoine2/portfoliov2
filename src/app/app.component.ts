@@ -1,10 +1,12 @@
-import {Component, Inject, OnInit} from "@angular/core";
+import {Component, Inject, OnInit} from '@angular/core';
 import { AosToken } from './aos';
+import {routerTransition} from './router.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [ routerTransition ],
   host: {
       '(window:scroll)': 'onScroll($event)'
   }
@@ -29,5 +31,9 @@ export class AppComponent{
     } else {
         this.isScrolled = false;
     }
+  }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 }

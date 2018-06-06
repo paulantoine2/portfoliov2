@@ -6,9 +6,9 @@ import {SkillsComponent} from './pages/skills/skills.component';
 import {ContactComponent} from './pages/contact/contact.component';
 
 export const routes: Routes = [
-  { path: '',            component: AboutComponent},
-  { path: 'portfolio',           component: PortfolioComponent},
-  { path: 'experience',             component: ExperienceComponent},
-  { path: 'skills',             component: SkillsComponent},
-  { path: 'contact',             component: ContactComponent},
+  { path: '',            component: AboutComponent, data: {state: 'about'}},
+  { path: 'portfolio',           component: PortfolioComponent, data: {state: 'portfolio'}},
+  { path: 'experience',             component: ExperienceComponent, data: {state: 'experience'}},
+  { path: 'skills',             component: SkillsComponent, data: {state: 'skills'}},
+  { path: 'contact',             component: ContactComponent, data: {state: 'contact'}},
 ];
