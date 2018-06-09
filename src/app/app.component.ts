@@ -15,6 +15,8 @@ export class AppComponent{
   currPos: Number = 0;
   startPos: Number = 0;
   changePos: Number = 10;
+  activeExperience = 1;
+  scroll: number;
 
   constructor(@Inject(AosToken) aos) {
     aos.init({
@@ -22,7 +24,12 @@ export class AppComponent{
     });  //you can now use it, although you may want to do this onInit instead
   }
 
+  activateExperience(i) {
+    this.activeExperience = i;
+  }
+
   onScroll(evt) {// window object can be wrapper in a service but for now we directly use it
+    this.scroll = window.pageYOffset;
     this.currPos = (window.pageYOffset || evt.target.scrollTop) - (evt.target.clientTop || 0);
     if(this.currPos >= this.changePos ) {
         this.isScrolled = true;
