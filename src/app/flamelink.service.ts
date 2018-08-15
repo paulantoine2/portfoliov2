@@ -11,18 +11,14 @@ export class FlamelinkService {
   fl;
 
   constructor() {
-    console.log(firebaseConfig);
-    const fireBaseApp = firebase.initializeApp(firebaseConfig);
     this.fl = flamelink(firebaseConfig);
   }
 
   getAllContent(content_type): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
-      console.log(content_type);
       this.fl.content.get(content_type)
         .then(data => {
-          console.log(data);
-          observer.next(Object.values(data));
+          observer.next(data);
           observer.complete();
         }).catch((err) => {
           observer.error(err);
