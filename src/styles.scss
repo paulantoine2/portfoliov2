@@ -430,40 +430,12 @@ body {
       align-items: center;
     }
 		.item {
-      text-decoration: none;
       max-width: calc(50% - 72px);
       width: 100%;
 			margin: 36px;
       @media screen and (max-width: 700px){
         margin: 16px 0;
         max-width: 100%;
-      }
-      > div {
-        border-radius: 10px;
-      }
-      .logo {
-        height: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        img {
-          transform: scale(0.5);
-          position: absolute;
-        }
-        &:after {
-          content: '';
-          width: 80%;
-          height: 1px;
-          background-color: #C7C7C7;
-          position: absolute;
-          bottom: 0;
-          left: 10%;
-        }
-      }
-      .description {
-        padding: 20px;
-
       }
 		}
 	}

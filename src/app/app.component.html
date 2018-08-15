@@ -91,46 +91,7 @@
       <h2>Freelance Portfolio 💼</h2>
       <p class="main-text small">This is the list of projects i’ve made as Freelance only. Please go to the Experience section to know more about my work !</p>
       <div class="items">
-        <a href="http://noelsolidaire.avh.asso.fr/" target="_blank" class="item" data-aos="fade-up" data-aos-once="true">
-          <div class="shade">
-            <div class="logo">
-              <img src="/assets/images/shared/valentin_hauy.png" alt="">
-            </div>
-            <div class="description">
-              <p class="main-text small">Landing page with live counter made from scratch</p>
-            </div>
-          </div>
-        </a>
-        <a href="http://noelle-eiferman.com/" target="_blank" class="item" data-aos="fade-up" data-aos-once="true">
-          <div class="shade">
-            <div class="logo">
-              <img src="/assets/images/shared/noelle_eifferman.png" alt="">
-            </div>
-            <div class="description">
-              <p class="main-text small">Portfolio with sliders made with Drupal 8 and jQuery</p>
-            </div>
-          </div>
-        </a>
-        <a href="http://touchezterre.fr/" target="_blank" class="item" data-aos="fade-up" data-aos-once="true">
-          <div class="shade">
-            <div class="logo">
-              <img src="/assets/images/shared/touchez_terre.png" alt="">
-            </div>
-            <div class="description">
-              <p class="main-text small">Wordpress landing page</p>
-            </div>
-          </div>
-        </a>
-        <a href="http://antoine-paul.com/" target="_blank" class="item" data-aos="fade-up" data-aos-once="true">
-          <div class="shade">
-            <div class="logo">
-              <img src="/assets/images/shared/LogoAP.svg" width="100px">
-            </div>
-            <div class="description">
-              <p class="main-text small">My first portfolio made with AngularJs</p>
-            </div>
-          </div>
-        </a>
+        <app-web-project *ngFor="let item of web_projects" [item]="item" class="item" data-aos="fade-up" data-aos-once="true"></app-web-project>
       </div>
     </div>
   </section>
@@ -175,7 +136,7 @@
               <li>Full backend development of Drupal 8 Websites</li>
               <li>Responsive integration of Drupal 8 and from scratch websites with SASS, Jquery and Gulp</li>
               <li>Junior courses</li>
-              <li>Team managment with Agile method</li>
+              <li>Team management with Agile method</li>
             </ul>
           </div>
           <div class="description" [ngClass]="{'active' : activeExperience == 2 }">
@@ -269,7 +230,7 @@
           </g>
         </svg>
       </div>
-      <div>Paul Antoine - Web Developper</div>
+      <div>Paul Antoine - Web Developer</div>
       <div>Design made by me - Dev with Angular © 2018</div>
     </div>
     <div class="footer-bot">Hosted By <img src="/assets/images/shared/heroku.svg" alt="Heroku"></div>

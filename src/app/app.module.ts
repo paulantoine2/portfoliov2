@@ -5,10 +5,13 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { AosToken, aos } from './aos';
 
 import { AppComponent } from './app.component';
+import { WebProjectComponent } from './components/web-project/web-project.component';
+import { FlamelinkService } from './flamelink.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WebProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +19,8 @@ import { AppComponent } from './app.component';
     InlineSVGModule
   ],
   providers: [
-    { provide: AosToken, useValue: aos }
+    { provide: AosToken, useValue: aos },
+    FlamelinkService
   ],
   bootstrap: [AppComponent]
 })

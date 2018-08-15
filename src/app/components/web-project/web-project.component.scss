@@ -1,0 +1,30 @@
+.shade {
+  border-radius: 10px;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    transform: scale(0.5);
+    position: absolute;
+  }
+  &:after {
+    content: '';
+    width: 80%;
+    height: 1px;
+    background-color: #C7C7C7;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+  }
+}
+.description {
+  padding: 20px;
+
+}
