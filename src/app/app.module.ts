@@ -13,6 +13,7 @@ import { routes } from './app.routing';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { StepComponent } from './components/experience/step/step.component';
 import { DescriptionComponent } from './components/experience/description/description.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DescriptionComponent } from './components/experience/description/descri
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     InlineSVGModule,
     RouterModule.forRoot(routes)

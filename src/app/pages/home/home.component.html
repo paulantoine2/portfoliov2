@@ -1,4 +1,20 @@
-<div id="container">
+<div id="loader" *ngIf="isLoading" [@fade]>
+  <div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60">
+      <g fill="none">
+        <path d="M27.5 27L32.3 24.5 27 15.2 22.2 17.9 27.5 27ZM29.5 5.9L42.6 24.4 41.9 27.3 31.2 33.5 37.9 40.9 37.3 43.9 31.3 47.3 25.3 36.9 16.3 42.1 17 53.1 16.3 56 9.5 60 9.5 46 3.4 49.5 0 43.6 0.7 40.7 9.5 36 9.5 17.4 10.2 14.2 29.5 5.9ZM21.3 30L16.3 21.4 16.3 32.6 21.3 30Z" fill="#87F0FB"/>
+        <path d="M28.5 24.6L33.2 21.9 27.7 12.2 22.9 14.9 28.5 24.6ZM13.6 12.5L30.2 2.9 43.2 21.4 42.6 24.4 31.9 30.5 38.6 38.1 37.9 40.9 32 44.4 26 33.9 17 39.1 17.7 50.1 17 53 10.2 57 10.2 43 4.1 46.5 0.7 40.6 1.4 37.7 10.2 35.2 10.2 14.4 10.9 11.5 13.6 12.5ZM22.6 28L17 18.4 17 31.2 22.6 28Z" fill="#ED0091"/>
+        <path d="M23.6 12.1L29.2 21.7 33.9 19 28.3 9.3 23.6 12.1 23.6 12.1ZM14.3 9.6L14.3 9.6 30.8 0 43.3 21.5 32.6 27.6 38.6 38.1 32.7 41.5 26.7 31 17.7 36.2 17.7 50.1 10.9 54.1 10.9 40.2 4.8 43.7 1.4 37.8 10.9 32.3 10.9 11.5 14.3 9.6 14.3 9.6ZM17.7 28.3L23.3 25.1 17.7 15.5 17.7 28.3 17.7 28.3Z" fill="#FEFF32"/>
+      </g>
+    </svg>
+  </div>
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</div>
+<div id="container" [ngClass]="{'isLoading': isLoading}">
   <header [ngClass]= "{'page-scroll': isScrolled}">
     <div class="branding">
       <div class="logo">
@@ -49,11 +65,11 @@
       <div class="thumbnail">
         <img src="/assets/images/shared/avatar.png" alt="">
       </div>
-      <div class="typing-indicator shade">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <!--<div class="typing-indicator shade">-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+      <!--</div>-->
       <div class="body">
         <div class="inside shade">
           <h2>Hello ! 😀</h2>
