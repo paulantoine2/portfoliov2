@@ -14,6 +14,9 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { StepComponent } from './components/experience/step/step.component';
 import { DescriptionComponent } from './components/experience/description/description.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlogComponent } from './pages/blog/blog.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ArticleTeaserComponent } from './components/article-teaser/article-teaser.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     ExperienceComponent,
     StepComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    BlogComponent,
+    HeaderComponent,
+    ArticleTeaserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+img {
+  width: auto;
+  height: 200px;
+  margin-right: 40px;
+}
+h2 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+p {
+  font-size: 0.875rem;
+  line-height: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+.container {
+  clear: both;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all .3s ease;
+  .read-more {
+    opacity: 0;
+    float: right;
+    transition: all .3s ease;
+    color: #333;
+    font-weight: bold;
+  }
+  .date {
+    float: left;
+  }
+  &:hover {
+    //box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+    .read-more {
+      opacity: 1;
+    }
+  }
+}
+

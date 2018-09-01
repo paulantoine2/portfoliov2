@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   scroll: number;
   web_projects = [];
   about_text = '';
-  everyday_tools: string;
+  everyday_tools = '';
   isLoading = true;
   completed = 0;
 
@@ -38,21 +38,30 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fl.getAllContent('web_project').subscribe(
-      (data) => this.web_projects = Object.values(data),
-      (error) => console.error(error),
-      () => this.onComplete()
-    );
-    this.fl.getAllContent('about').subscribe(
-      (data) => this.about_text = data.description,
-      (error) => console.error(error),
-      () => this.onComplete()
-    );
-    this.fl.getAllContent('everydayTools').subscribe(
-      (data) => this.everyday_tools = data.description,
-      (error) => console.error(error),
-      () => this.onComplete()
-    );
+    const home_content = sessionStorage.getItem('homeContent');
+    if (!home_content) {
+      this.fl.getAllContent('web_project').subscribe(
+        (data) => this.web_projects = Object.values(data),
+        (error) => console.error(error),
+        () => this.onComplete()
+      );
+      this.fl.getAllContent('about').subscribe(
+        (data) => this.about_text = data.description,
+        (error) => console.error(error),
+        () => this.onComplete()
+      );
+      this.fl.getAllContent('everydayTools').subscribe(
+        (data) => this.everyday_tools = data.description,
+        (error) => console.error(error),
+        () => this.onComplete()
+      );
+    } else {
+      this.isLoading = false;
+      const parsed_content = JSON.parse(home_content);
+      this.web_projects = parsed_content.web_projects;
+      this.about_text = parsed_content.about_text;
+      this.everyday_tools = parsed_content.everyday_tools;
+    }
   }
 
   onScroll(evt) {
@@ -63,7 +72,15 @@ export class HomeComponent implements OnInit {
 
   onComplete() {
     this.completed++;
-    if (this.completed >= 3) { this.isLoading = false; }
+    if (this.completed >= 3) {
+      this.isLoading = false;
+      const home_content = {
+        web_projects: this.web_projects,
+        about_text: this.about_text,
+        everyday_tools: this.everyday_tools,
+      };
+      sessionStorage.setItem('homeContent', JSON.stringify(home_content));
+    }
   }
 
 }

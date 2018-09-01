@@ -37,6 +37,7 @@
         <li><a class="link" (click)="portfolio.scrollIntoView({behavior:'smooth'})" title="Portfolio">Portfolio</a></li>
         <li><a class="link" (click)="experience.scrollIntoView({behavior:'smooth'})" title="Experience">Experience</a></li>
         <li><a class="link" (click)="skills.scrollIntoView({behavior:'smooth'})" title="Skills">Skills</a></li>
+        <li><a routerLink="/blog" title="Blog">Blog</a></li>
         <li><a class="button" (click)="contact.scrollIntoView({behavior:'smooth'})" title="Contact me">Hire now</a></li>
         <li><a class="icon" href="https://github.com/paulantoine2/" target="_blank" title="Github">
           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
@@ -59,17 +60,13 @@
       </ul>
     </nav>
   </header>
+
   <section #about id="about" class="dark">
     <div class="bg"></div>
     <div class="wrapper">
       <div class="thumbnail">
         <img src="/assets/images/shared/avatar.png" alt="">
       </div>
-      <!--<div class="typing-indicator shade">-->
-        <!--<span></span>-->
-        <!--<span></span>-->
-        <!--<span></span>-->
-      <!--</div>-->
       <div class="body">
         <div class="inside shade">
           <h2>Hello ! 😀</h2>
