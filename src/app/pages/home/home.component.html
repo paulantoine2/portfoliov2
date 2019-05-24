@@ -36,8 +36,8 @@
         <li><a class="link" (click)="about.scrollIntoView({behavior:'smooth'})" title="About">About</a></li>
         <li><a class="link" (click)="portfolio.scrollIntoView({behavior:'smooth'})" title="Portfolio">Portfolio</a></li>
         <li><a class="link" (click)="experience.scrollIntoView({behavior:'smooth'})" title="Experience">Experience</a></li>
-        <li><a class="link" (click)="skills.scrollIntoView({behavior:'smooth'})" title="Skills">Skills</a></li>
-        <li><a class="button" (click)="contact.scrollIntoView({behavior:'smooth'})" title="Contact me">Hire now</a></li>
+        <li><a class="link" (click)="lab.scrollIntoView({behavior:'smooth'})" title="Lab">Lab</a></li>
+        <li><a class="button" (click)="contact.scrollIntoView({behavior:'smooth'})" title="Contact me">Contact now</a></li>
         <li><a class="icon" href="https://github.com/paulantoine2/" target="_blank" title="Github">
           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
             <g fill="none">
@@ -74,31 +74,31 @@
         <div class="inside shade">
           <h2>Hello ! 😀</h2>
           <p class="main-text medium">{{ about_text }}</p>
-          <div class="objectives">
-            <ul>
-              <li class="intuitive">
-                <div class="icon"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"></div>
-                <div class="title">Intuitive</div>
-              </li>
-              <li class="fast">
-                <div class="icon"><img src="/assets/images/shared/shutter_speed.svg" alt="shutter speed"></div>
-                <div class="title">Fast</div>
-              </li>
-              <li class="responsive">
-                <div class="icon"><img src="/assets/images/shared/mobile_friendly.svg" alt="mobile friendly"></div>
-                <div class="title">Responsive</div>
-              </li>
-              <li class="dynamic">
-                <div class="icon"><img src="/assets/images/shared/star_border.svg" alt="star border"></div>
-                <div class="title">Dynamic</div>
-              </li>
-            </ul>
-          </div>
+          <!--<div class="objectives">-->
+            <!--<ul>-->
+              <!--<li class="intuitive">-->
+                <!--<div class="icon"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"></div>-->
+                <!--<div class="title">Intuitive</div>-->
+              <!--</li>-->
+              <!--<li class="fast">-->
+                <!--<div class="icon"><img src="/assets/images/shared/shutter_speed.svg" alt="shutter speed"></div>-->
+                <!--<div class="title">Fast</div>-->
+              <!--</li>-->
+              <!--<li class="responsive">-->
+                <!--<div class="icon"><img src="/assets/images/shared/mobile_friendly.svg" alt="mobile friendly"></div>-->
+                <!--<div class="title">Responsive</div>-->
+              <!--</li>-->
+              <!--<li class="dynamic">-->
+                <!--<div class="icon"><img src="/assets/images/shared/star_border.svg" alt="star border"></div>-->
+                <!--<div class="title">Dynamic</div>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</div>-->
         </div>
       </div>
     </div>
     <div class="highlighted">
-      <img src="/assets/images/shared/featured_wordmarks.svg" alt="">
+      <!--<img src="/assets/images/shared/featured_wordmarks.svg" alt="">-->
     </div>
   </section>
   <section #portfolio id="portfolio" class="light">
@@ -113,40 +113,23 @@
   <section #experience id="experience" class="dark">
     <experiences></experiences>
   </section>
-  <section #skills id="skills" class="light">
+  <section #lab id="lab" class="light">
     <div class="wrapper">
-      <h2>My Skills 🍳</h2>
-      <p class="main-text small">I mainly use the folowing technologies based on HTML, CSS, PHP and JavaScript to develop my websites :</p>
-      <div class="content">
-        <div class="items">
-          <div class="item" id="skill-drupal" data-aos="fade-up" data-aos-once="true">
-            <div class="logo shade"><img src="/assets/images/shared/drupal_icon.svg" alt=""></div>
-            <div class="title">Drupal 8 for an easy content managment</div>
-          </div>
-          <div class="item" id="skill-nodejs" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
-            <div class="logo shade"><img src="/assets/images/shared/nodejs_icon.svg" alt=""></div>
-            <div class="title">NodeJS for ultra fast APIs</div>
-          </div>
-          <div class="item" id="skill-angular" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
-            <div class="logo shade"><img src="/assets/images/shared/angular_icon.svg" alt=""></div>
-            <div class="title">Angular for a fluid user experience</div>
-          </div>
-        </div>
-        <div
-          class="description"
-          data-aos="fade-in"
-          data-aos-once="true"
-          data-aos-offset="0"
-          data-aos-delay="600">
-          <p class="main-text small">And some everyday tools :</p>
-          <p class="main-text small">{{ everyday_tools }}</p>
-        </div>
+      <h2>Lab ⚗️</h2>
+      <p class="main-text small">Here is some side projects/experiment I've made.</p>
+      <div class="items">
+        <ul>
+          <li class="item"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"><a href="https://paulantoine2.github.io/preview" target="_blank">Instagram Preview</a> tool to preview your Instagram Feed on desktop</li>
+          <li class="item"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"><a href="https://paulantoine2.github.io/demineur" target="_blank">Demineur</a> the game</li>
+          <li class="item"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"><a href="https://paulantoine2.github.io/2048" target="_blank">2048</a> the game</li>
+          <li class="item"><img src="/assets/images/shared/lightbulb.svg" alt="lightbulb"><a href="https://paulantoine2.github.io/dualnback" target="_blank">Dual'n'back</a></li>
+        </ul>
       </div>
     </div>
   </section>
   <section #contact id="contact">
     <div class="wrapper shade" data-aos="fade-up" data-aos-once="true">
-      <h2>Hire me now !</h2>
+      <h2>Let's grab a coffee ☕️</h2>
       <p class="main-text small">
         If your interested in working with me, we should chat. Contact me !
       </p>
@@ -187,6 +170,5 @@
       <div>Paul Antoine - Web Developer</div>
       <div>Design made by me - Dev with Angular © 2018</div>
     </div>
-    <div class="footer-bot">Hosted By <img src="/assets/images/shared/heroku.svg" alt="Heroku"></div>
   </footer>
 </div>

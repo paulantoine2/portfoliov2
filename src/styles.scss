@@ -86,10 +86,10 @@ h2 {
 }
 .shade {
 	background: #FFFFFF;
-	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+	box-shadow: 3px 3px 0px 0 rgba(46,61,73,.15);
 	transition: all .3s ease;
 	&:hover {
-		box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+		box-shadow: 1px 1px 1px 0 rgba(46,61,73,.15);
 	}
 }
 .call-to-action {
@@ -149,16 +149,18 @@ header {
     background-color: $purple;
     color: #fff;
     border-color: $purple;
-    box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+    box-shadow: 3px 3px 0 0 rgba(46,61,73,.15);
     min-width: 90px;
     text-align: center;
+    transition: all .2s cubic-bezier(.48,-0.59,.59,1.59);
     &:hover {
-      box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+      box-shadow: 2px 2px 0 0 rgba(46,61,73,.15);
+      transform: scale(1.1);
     }
   }
 	&.page-scroll {
 		background-color: #fff;
-		box-shadow: 0 0 19px 8px rgba(0,0,0,0.13);
+		box-shadow: 0 1px 0 0 rgba(0,0,0,0.13);
 		&, a:not(.button) {
 			color: #4A4A4A;
 			border-color: #4A4A4A;

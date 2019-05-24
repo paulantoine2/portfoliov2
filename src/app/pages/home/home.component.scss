@@ -127,6 +127,10 @@
           text-align: left;
         }
       }
+      p {
+        margin: 1.5rem 0;
+        text-align: justify;
+      }
       .objectives ul {
         display: flex;
         flex-wrap: wrap;
@@ -277,6 +281,26 @@
         color: #C4473A;
       }
     }
+  }
+}
+#lab {
+  ul {
+    max-width: 600px;
+    width: 100%;
+    margin: 50px auto 0 auto;
+  }
+  .item {
+    font-weight: 600;
+    color: #000;
+    a {
+      font-weight: 600;
+      color: #000;
+    }
+    img {
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    margin: 10px 0;
   }
 }
 #contact {
