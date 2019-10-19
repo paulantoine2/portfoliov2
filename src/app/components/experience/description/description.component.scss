@@ -1,0 +1,19 @@
+:host {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  .description {
+    opacity: 0;
+    font-size: 0.875rem;
+    line-height: 2em;
+    transition: opacity .2s ease;
+    ::ng-deep li {
+      list-style: disc inside;
+    }
+    &.active {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <h2>Experience & Education 📈</h2>
+  <div class="content">
+    <div class="steps" id="steps_trigger">
+      <experience-step
+        *ngFor="let step of steps; index as i"
+        data-aos="fade-in"
+        data-aos-once="true"
+        data-aos-anchor="#steps_trigger"
+        data-aos-delay="200"
+        [data]="step"
+        [index]="i"
+        [active]="active === i"
+        (activate)="onStepActivation($event)"
+      ></experience-step>
+    </div>
+    <div
+      class="descriptions"
+      data-aos="fade-in"
+      data-aos-once="true"
+      data-aos-anchor="#steps_trigger"
+      data-aos-delay="400">
+      <!--data-aos-delay="{{ (steps.length + 1) * 200 }}">-->
+      <experience-description
+        *ngFor="let step of steps; index as i"
+        [data]="step.description"
+        [active]="active === i"
+      ></experience-description>
+    </div>
+  </div>
+</div>
+<div class="call-to-action">
+  <a class="button" href="https://www.linkedin.com/in/paul-antoine-183707121/" target="_blank">LinkedIn Profile</a>
+</div>

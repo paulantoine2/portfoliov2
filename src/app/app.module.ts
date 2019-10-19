@@ -5,18 +5,35 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { AosToken, aos } from './aos';
 
 import { AppComponent } from './app.component';
+import { WebProjectComponent } from './components/web-project/web-project.component';
+import { FlamelinkService } from './flamelink.service';
+import { HomeComponent } from './pages/home/home.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routing';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { StepComponent } from './components/experience/step/step.component';
+import { DescriptionComponent } from './components/experience/description/description.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WebProjectComponent,
+    HomeComponent,
+    ExperienceComponent,
+    StepComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    InlineSVGModule
+    InlineSVGModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
-    { provide: AosToken, useValue: aos }
+    { provide: AosToken, useValue: aos },
+    FlamelinkService
   ],
   bootstrap: [AppComponent]
 })

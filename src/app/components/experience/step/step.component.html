@@ -1,0 +1,10 @@
+<div class="step"
+     (mouseenter)="activateExperience()"
+     [ngClass]="{'active' : active }">
+  <div class="body" data-aos="fade-left" data-aos-once="true" data-aos-anchor="#steps_trigger">
+    <div class="title" *ngIf="data.title">{{ data.title }}</div>
+    <div class="company" *ngIf="data.company">{{ data.company }}</div>
+    <div class="date" *ngIf="data.datePeriod">{{ data.datePeriod }}</div>
+    <div class="location" *ngIf="data.location">{{ data.location }}</div>
+  </div>
+</div>

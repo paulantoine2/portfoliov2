@@ -1,0 +1,43 @@
+.shade {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .description {
+      opacity: 1;
+    }
+    .logo img {
+      transform: scale(0.47);
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    transform: scale(0.5);
+    transition: transform .3s ease;
+    position: absolute;
+  }
+}
+.description {
+  //padding: 20px;
+  //position: absolute;
+  //opacity: 0;
+  //transition: opacity .3s ease;
+  //left: 0;
+  //right: 0;
+  //top: 0;
+  //bottom: 0;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //background-color: #fff;
+  display: none;
+}
